@@ -3,7 +3,7 @@ import Detail from '../pages/detail';
  
 const routes = {
     '/': Home,
-    '/detail': Detail,
+    '/detail/:id': Detail,
     // '/upcoming': Upcoming,
     // '/detail/:id': Detail,
 };
