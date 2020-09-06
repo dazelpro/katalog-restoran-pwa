@@ -1,24 +1,38 @@
 import 'regenerator-runtime';
 import '../styles/main.css';
 import '../styles/responsive.css';
+import App from './app';
 
-const menu = document.querySelector('#menu');
-const hero = document.querySelector('.hero');
-const main = document.querySelector('main');
-const drawer = document.querySelector('#drawer');
+const menu      = document.querySelector('#menu');
+const hero      = document.querySelector('.hero');
+const main      = document.querySelector('main');
+const drawer    = document.querySelector('#drawer');
 
-menu.addEventListener('click', function (event) {
+const app = new App({
+    content: document.querySelector('#content'),
+});
+
+menu.addEventListener('click', (event) => {
     drawer.classList.toggle('open');
     event.stopPropagation();
 });
 
-hero.addEventListener('click', function () {
+hero.addEventListener('click', () => {
     drawer.classList.remove('open');
 });
 
-main.addEventListener('click', function () {
+main.addEventListener('click', () => {
     drawer.classList.remove('open');
 });
+
+window.addEventListener('hashchange',  () => {
+    app.renderPage();
+});
+   
+window.addEventListener('load',  () => {
+    app.renderPage();
+});
+
 // Fetch data json
 // import ('../DATA.json').then(({default: jsonData}) => {
 //     console.log(jsonData)
@@ -44,9 +58,9 @@ main.addEventListener('click', function () {
 // });
 
 // Fetch Data From API
-fetch('https://dicoding-restaurant-api.el.r.appspot.com/list')
-    .then(res => res.json())
-    .then((out) => {
-        console.log(out);
-    })
-.catch(err => console.error(err));
+// fetch('https://dicoding-restaurant-api.el.r.appspot.com/list')
+//     .then(res => res.json())
+//     .then((out) => {
+//         console.log(out);
+//     })
+// .catch(err => console.error(err));
