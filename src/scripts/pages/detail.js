@@ -3,7 +3,7 @@ const Detail = {
         return `
         <section class="content">
             <div class="latest">
-                <h1>Explore Restaurant</h1>
+                <h1>Detail</h1>
                 <div class="list" id="tes"></div>
             </div>
         </section>
