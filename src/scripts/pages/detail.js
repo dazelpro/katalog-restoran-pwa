@@ -20,6 +20,7 @@ const Detail = {
         let listCategory = '';
         let listMakanan = '';
         let listMinuman = '';
+        let listReview = '';
         const data = await sourceData.detailResto(url.id);
         console.log(data)
         data['restaurant']['categories'].forEach(function(data) {
@@ -37,6 +38,14 @@ const Detail = {
                 ${data['name']},
             `;
         });
+        data['restaurant']['consumerReviews'].forEach(function(data) {
+            listReview +=`
+            <div class="review-card">
+                <p><b>${data['name']}</b> - ${data['date']}</p>
+                <p>${data['review']}</p>
+            </div>
+            `;
+        });
         dataDetail += `
             <div class="list_item">
                 <img class="list_item_img" src="${CONFIG.BASE_IMAGE_URL_MEDIUM+data['restaurant']['pictureId']}" alt="${data['restaurant']['name']}" title="${data['restaurant']['name']}">
@@ -50,12 +59,15 @@ const Detail = {
                     <p class="alamat">${data['restaurant']['address']}</p>
                     <div class="list_item_desc_detail">${data['restaurant']['description']}</div>
                     <br>
-                    <h2>Categori Menu</h2>
+                    <h2>Menu</h2>
                     <div style="margin-top:10px;margin-bottom:20px">${listCategory}</div>
                     <h3>Makanan</h3>
                     <div style="margin-top:10px;margin-bottom:20px">${listMakanan}</div>
                     <h3>Minuman</h3>
                     <div style="margin-top:10px;margin-bottom:20px">${listMinuman}</div>
+                    <h2>Review</h2>
+                    <p>Apa kata mereka yang sudah pernah berkunjung ke sini?</p>
+                    <div style="margin-top:-15px;margin-bottom:20px; padding-top:20px;padding-bottom:20px">${listReview}</div>
                 </div>
             </div>
         `;

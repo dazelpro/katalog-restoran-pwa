@@ -255,3 +255,8 @@ footer {
 .skip-link:focus {
 	top: 100px
 }
+.review-card {
+	border: 1px solid #333;
+	padding:10px;
+	margin-top: 10px;
+}
