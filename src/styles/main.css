@@ -257,7 +257,8 @@ footer {
 	top: 100px
 }
 .review-card {
-	border: 1px solid #333;
+	border: 1px solid #135ea8;
+	border-radius: 5px;
 	padding:10px;
 	margin-top: 10px;
 }
