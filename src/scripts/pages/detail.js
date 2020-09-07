@@ -9,6 +9,11 @@ const Detail = {
             <div class="latest">
                 <h1 id="restoName"></h1>
                 <div class="detail-content" id="detail"></div>
+                <div id="likeButtonContainer">
+                    <button aria-label="unlike this movie" id="likeButton" class="like">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
         </section>
         `;
@@ -68,9 +73,6 @@ const Detail = {
                     <h2>Review</h2>
                     <p>Apa kata mereka yang sudah pernah berkunjung ke sini?</p>
                     <div style="margin-top:-15px;margin-bottom:20px; padding-top:20px;padding-bottom:20px">${listReview}</div>
-                    <div>
-                        <button>S</button>
-                    </div>
                 </div>
             </div>
         `;
