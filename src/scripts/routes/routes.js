@@ -1,10 +1,11 @@
 import Home from '../pages/home';
 import Detail from '../pages/detail';
+import Favorite from '../pages/favorite';
  
 const routes = {
     '/': Home,
     '/detail/:id': Detail,
-    // '/upcoming': Upcoming,
+    '/favorite': Favorite,
     // '/detail/:id': Detail,
 };
  
