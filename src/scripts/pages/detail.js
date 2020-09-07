@@ -68,6 +68,9 @@ const Detail = {
                     <h2>Review</h2>
                     <p>Apa kata mereka yang sudah pernah berkunjung ke sini?</p>
                     <div style="margin-top:-15px;margin-bottom:20px; padding-top:20px;padding-bottom:20px">${listReview}</div>
+                    <div>
+                        <button>S</button>
+                    </div>
                 </div>
             </div>
         `;
