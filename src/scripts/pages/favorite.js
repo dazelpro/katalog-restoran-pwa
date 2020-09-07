@@ -1,7 +1,7 @@
 import sourceData from '../data/source';
 import CONFIG from '../data/config';
 
-const Home = {
+const Favorite = {
     async render() {
         return `
         <section class="content">
@@ -36,4 +36,4 @@ const Home = {
     },
 };
    
-export default Home;
+export default Favorite;

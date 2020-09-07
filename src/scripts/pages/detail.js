@@ -1,6 +1,7 @@
 import sourceData from '../data/source';
 import CONFIG from '../data/config';
 import UrlParser from '../routes/url-parser';
+import LikeButtonInitiator from '../like-button-initiator';
 
 const Detail = {
     async render() {
@@ -9,11 +10,7 @@ const Detail = {
             <div class="latest">
                 <h1 id="restoName"></h1>
                 <div class="detail-content" id="detail"></div>
-                <div id="likeButtonContainer">
-                    <button aria-label="unlike this movie" id="likeButton" class="like">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                    </button>
-                </div>
+                <div id="likeButtonContainer"></div>
             </div>
         </section>
         `;
@@ -27,7 +24,7 @@ const Detail = {
         let listMinuman = '';
         let listReview = '';
         const data = await sourceData.detailResto(url.id);
-        console.log(data)
+        // console.log(data)
         data['restaurant']['categories'].forEach(function(data) {
             listCategory +=`
                 <div class="tag">${data['name']}</div>
@@ -78,6 +75,18 @@ const Detail = {
         `;
         document.querySelector('#restoName').innerHTML = `DETAIL RESTORAN`;
         document.querySelector('#detail').innerHTML = dataDetail;
+
+        LikeButtonInitiator.init({
+            likeButtonContainer: document.querySelector('#likeButtonContainer'),
+            data: {
+                id: data['restaurant']['id'],
+                name: data['restaurant']['name'],
+                description: data['restaurant']['description'],
+                rating: data['restaurant']['rating'],
+                pictureId: data['restaurant']['pictureId'],
+                city: data['restaurant']['city']
+            },
+        });
     },
 };
    
