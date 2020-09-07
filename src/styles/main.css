@@ -195,7 +195,8 @@ main {
 }
 .list_item_thumb {
 	width: 100%;
-	max-height: 200px
+	max-height: 200px;
+	min-height: 200px;
 }
 .list_item_img {
 	width: 100%;
