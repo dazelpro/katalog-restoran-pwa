@@ -29,6 +29,9 @@
 		width: 100%;
 		text-align: left
 	}
+	.detail-content {
+		padding: 0;
+	}
 }
 @media screen and (min-width: 650px) {
 	.list_item_content {

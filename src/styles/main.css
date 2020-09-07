@@ -13,7 +13,7 @@ html {
 	height: 100%
 }
 body {
-	font-size: 12px;
+	font-size: 14px;
 	color: #424242
 }
 .menumob {
@@ -129,6 +129,10 @@ main {
 .content {
 	padding: 32px
 }
+.detail-content {
+	padding-left: 20%;
+	padding-right: 20%;
+}
 .latest {
 	width: 100%;
 	margin-top: 30px;
@@ -139,6 +143,15 @@ main {
 	font-weight: 700;
 	font-size: 2em;
 	margin-bottom: 50px
+}
+.latest h2 {
+	font-weight: 700;
+	font-size: 2em;
+	/* margin-bottom: 10px */
+}
+.alamat {
+	margin-bottom: 30px;
+	font-weight: 500;
 }
 .list {
 	margin: 32px auto auto;
@@ -163,6 +176,20 @@ main {
 	color: white;
 	font-weight: 500
 }
+.city-detail {
+	border-radius: 5px;
+	background-color: #135ea8;
+	padding: 5px 10px 5px;
+	color: white;
+	font-weight: 500
+}
+.tag {
+	background-color: #135ea8;
+	padding: 5px 5px 5px;
+	color: white;
+	font-weight: 400;
+	display: inline;
+}
 .list_item_content {
 	padding: 16px
 }
@@ -183,7 +210,7 @@ main {
 	color: red;
 	text-decoration: none
 }
-.list_item_title {
+.list_item_title, .list_item_title_detail {
 	font-weight: 500;
 	font-size: 16px;
 	margin-top: 10px;
@@ -199,6 +226,11 @@ main {
 .list_item_desc {
 	margin-top: -30px;
 	font-size: 12px;
+	line-height: 1.5em
+}
+.list_item_desc_detail {
+	/* margin-top: -30px; */
+	font-size: 14px;
 	line-height: 1.5em
 }
 footer {
