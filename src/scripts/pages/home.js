@@ -16,7 +16,7 @@ const Home = {
     async afterRender() {
         const resto = await sourceData.listResto();
         let dataList = '';
-        console.log(resto['restaurants']);
+        // console.log(resto['restaurants']);
         resto['restaurants'].forEach(function(data) {
             dataList +=`
             <div class="list_item">

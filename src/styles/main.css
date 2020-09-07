@@ -170,6 +170,9 @@ main {
 	width: 100%;
 	max-height: 200px
 }
+.list_item_img {
+	width: 100%;
+}
 .list_item_rating {
 	font-size: 12px;
 	text-transform: uppercase;
