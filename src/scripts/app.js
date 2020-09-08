@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable object-curly-newline */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable linebreak-style */
