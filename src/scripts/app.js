@@ -1,7 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable object-curly-newline */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable linebreak-style */
 import UrlParser from './routes/url-parser';
 import routes from './routes/routes';
 

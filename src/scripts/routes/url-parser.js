@@ -4,12 +4,12 @@ const UrlParser = {
         const splitedUrl = this._urlSplitter(url);
         return this._urlCombiner(splitedUrl);
     },
-   
+
     parseActiveUrlWithoutCombiner() {
         const url = window.location.hash.slice(1).toLowerCase();
         return this._urlSplitter(url);
     },
-   
+
     _urlSplitter(url) {
         const urlsSplits = url.split('/');
         return {
@@ -18,12 +18,12 @@ const UrlParser = {
             verb: urlsSplits[3] || null,
         };
     },
-   
+
     _urlCombiner(splitedUrl) {
         return (splitedUrl.resource ? `/${splitedUrl.resource}` : '/')
         + (splitedUrl.id ? '/:id' : '')
         + (splitedUrl.verb ? `/${splitedUrl.verb}` : '');
     },
 };
-   
+
 export default UrlParser;
