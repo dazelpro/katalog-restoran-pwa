@@ -5,17 +5,17 @@ import App from './app';
 import swRegister from './sw-register';
 
 const app = new App({
-  content: document.querySelector('#content'),
-  menu: document.querySelector('#menu'),
-  drawer: document.querySelector('#drawer'),
-  main: document.querySelector('main'),
+    content: document.querySelector('#content'),
+    menu: document.querySelector('#menu'),
+    drawer: document.querySelector('#drawer'),
+    main: document.querySelector('main'),
 });
 
 window.addEventListener('hashchange', () => {
-  app.renderPage();
+    app.renderPage();
 });
 
 window.addEventListener('load', () => {
-  app.renderPage();
-  swRegister();
+    app.renderPage();
+    swRegister();
 });
