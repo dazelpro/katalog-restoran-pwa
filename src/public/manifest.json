@@ -1,17 +1,22 @@
 {
-    "name": "Aplikasi PWA Laper Apps",
+    "name": "LAPER APPS",
     "short_name": "LAPER APPS",
-    "description": "Belajar Membuat Aplikasi PWA",
-    "start_url": "/index.html",
-    "display": "standalone",
+    "description": "Aplikasi PWA Laper Apps",
+    "scope": "/",
+    "start_url": "/",
+    "display": "fullscreen",
     "background_color": "#ffffff",
-    "theme_color": "#d84315",
+    "theme_color": "#0595fc",
     "icons": [
-      {
+        {
             "src": "/images/icon.png",
             "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "any maskable"
-      }
+            "type": "image/png"
+        },
+        {
+            "src": "/images/icon96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }
     ]
   }
