@@ -18,12 +18,12 @@ const Favorite = {
         const resto = await FavoriteIdb.getAllFavorite();
         let dataList = '';
         if(resto.length === 0){
-            document.querySelector('.movie-item__not__found').innerHTML = 'Tidak ada film untuk ditampilkan';
+            document.querySelector('.movie-item__not__found').innerHTML = 'Tidak ada Restoran Favorite untuk ditampilkan';
         }else{
             resto.forEach((data) => {
                 dataList += `
                 <div class="list_item">
-                    <img class="list_item_thumb" src="${CONFIG.BASE_IMAGE_URL_SMALL + data.pictureId}" alt="${data.name}" title="${data.name}">
+                    <img class="list_item_thumb" loading="lazy" src="${CONFIG.BASE_IMAGE_URL_SMALL + data.pictureId}" alt="${data.name}" title="${data.name}">
                     <div class="city">${data.city}</div>
                     <div class="list_item_content">
                         <p class="list_item_rating">
