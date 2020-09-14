@@ -1,10 +1,13 @@
 Feature('Liking Movies');
 
 Before((I) => {
-    I.amOnPage('/#/favorite');
+    I.amOnPage('/');
 });
 
-Scenario('showing empty liked movies', (I) => {
-    I.seeElement('#tes');
-    I.see('Tidak ada film untuk ditampilkan', '.movie-item__not__found');
+Scenario('Like dan Batal Like', (I) => {
+    I.see('Explore Restaurant', 'h1');
+    I.click('Istana Emas', '.list_item_title');
+    I.seeElement('#restoName');
+    I.click("#likeButton");
+    I.click("#likedButton");
 });
