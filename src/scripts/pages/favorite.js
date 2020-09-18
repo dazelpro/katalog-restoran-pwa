@@ -17,9 +17,9 @@ const Favorite = {
     async afterRender() {
         const resto = await FavoriteIdb.getAllFavorite();
         let dataList = '';
-        if(resto.length === 0){
+        if (resto.length === 0) {
             document.querySelector('.resto-item__not__found').innerHTML = 'Tidak ada Restoran Favorite untuk ditampilkan';
-        }else{
+        } else {
             resto.forEach((data) => {
                 dataList += `
                 <div class="list_item">
@@ -36,7 +36,7 @@ const Favorite = {
                     </div>
                 </div>
                 `;
-            })
+            });
             document.querySelector('#tes').innerHTML = dataList;
         }
     },
