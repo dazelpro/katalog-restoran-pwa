@@ -25,7 +25,7 @@ const LikeButtonInitiator = {
 
     _renderLike() {
         this._likeButtonContainer.innerHTML = `
-        <button [aria-label="Data Belum Favorite"] id="likeButton" class="like">
+        <button aria-label="Klik kalau suka" id="likeButton" class="like">
             <i class="fa fa-star-o" aria-hidden="true"></i>
         </button>`;
 
@@ -38,7 +38,7 @@ const LikeButtonInitiator = {
 
     _renderLiked() {
         this._likeButtonContainer.innerHTML = `
-        <button [aria-label="Data Udah Favorite"] id="likedButton" class="like">
+        <button aria-label="Klik kalau gak jadi suka" id="likedButton" class="like">
             <i class="fa fa-star" aria-hidden="true"></i>
         </button>`;
 

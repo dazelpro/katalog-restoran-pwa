@@ -1,7 +1,7 @@
 import LikeButtonInitiator from '../src/scripts/like-button-initiator';
-import FavoriteMovieIdb from '../src/scripts/data/database-idb';
+import FavoriteIdb from '../src/scripts/data/database-idb';
 
-describe('Liking A Movie', () => {
+describe('Menyukai Restoran', () => {
     const addLikeButtonContainer = () => {
         document.body.innerHTML = '<div id="likeButtonContainer"></div>';
     };
@@ -10,25 +10,27 @@ describe('Liking A Movie', () => {
         addLikeButtonContainer();
     });
    
-    it('should show the like button when the movie has not been liked before', async () => {
+    it('harusnya menampilkan tombol suka', async () => {
         await LikeButtonInitiator.init({
             likeButtonContainer: document.querySelector('#likeButtonContainer'),
             data: {
                 id: 1,
             },
         });
+        expect(document.querySelector('[aria-label="Klik kalau suka"]')).toBeTruthy();
     });
    
-    it('should not show the unlike button when the movie has not been liked before', async () => {
+    it('harusnya tombol batal suka tidak ditampilkan', async () => {
         await LikeButtonInitiator.init({
             likeButtonContainer: document.querySelector('#likeButtonContainer'),
             data: {
                 id: 1,
             },
         });
+        expect(document.querySelector('[aria-label="Klik kalau gak jadi suka"]')).toBeFalsy();
     });
    
-    it('should be able to like the movie', async () => {
+    it('harusnya berhasil menekan tombol suka', async () => {
         await LikeButtonInitiator.init({
             likeButtonContainer: document.querySelector('#likeButtonContainer'),
             data: {
@@ -37,8 +39,10 @@ describe('Liking A Movie', () => {
         });
    
         document.querySelector('#likeButton').dispatchEvent(new Event('click'));
-        const movie = await FavoriteMovieIdb.getFavorite(1);
-    
-        FavoriteMovieIdb.deleteFavorite(1);
+        const resto = await FavoriteIdb.getFavorite(1);
+        
+        expect(resto).toEqual({ id: 1 });
+        
+        FavoriteIdb.deleteFavorite(1);
     });
   });
