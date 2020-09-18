@@ -8,7 +8,7 @@ const Favorite = {
             <div class="latest">
                 <h1>Explore Favorite Restaurant</h1>
                 <div class="list" id="tes"></div>
-                <div class="movie-item__not__found"></div>
+                <div class="resto-item__not__found"></div>
             </div>
         </section>
         `;
@@ -18,11 +18,12 @@ const Favorite = {
         const resto = await FavoriteIdb.getAllFavorite();
         let dataList = '';
         if(resto.length === 0){
-            document.querySelector('.movie-item__not__found').innerHTML = 'Tidak ada Restoran Favorite untuk ditampilkan';
+            document.querySelector('.resto-item__not__found').innerHTML = 'Tidak ada Restoran Favorite untuk ditampilkan';
         }else{
             resto.forEach((data) => {
                 dataList += `
                 <div class="list_item">
+                    <!-- Load Gambar Lazy Loading -->
                     <img class="list_item_thumb" loading="lazy" src="${CONFIG.BASE_IMAGE_URL_SMALL + data.pictureId}" alt="${data.name}" title="${data.name}">
                     <div class="city">${data.city}</div>
                     <div class="list_item_content">
